@@ -3,6 +3,24 @@
     <title>Caesar Cipher</title>
   </head>
   <body>
-    <h1> Hello World!</h1>
+    <h1>Caesar Cipher</h1>
+
+    <form>
+      <p>
+        Your message:
+      </p>
+      <textarea name="message"></textarea><br/>
+      <p>
+        <input type="number" name="shift_key" value="5">
+      </p>
+      <input type="submit" value="Encrypt message"/>
+    </form>
+
+    <% if !encrypted_message.nil?  %>
+      <h2>Encrypted Message</h2>
+      <p>
+        <%= encrypted_message %>
+      </p>
+    <% end %>
   </body>
 </html>

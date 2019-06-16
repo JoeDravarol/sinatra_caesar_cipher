@@ -1,3 +1,5 @@
+require 'caesar_cipher'
+
 class CaesarCipherApp < Sinatra::Base
   set :root, 'lib/app'
   
@@ -6,6 +8,12 @@ class CaesarCipherApp < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    cipher = CaesarCipher.new
+    phrase = params["message"]
+    key = params["shift_key"].to_i
+
+    message = cipher.encrypt_message(phrase, key) if !phrase.nil? && !key.nil?
+
+    erb :index, locals: {encrypted_message: message}
   end
 end
