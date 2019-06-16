@@ -1,26 +1,32 @@
 <html>
   <head>
     <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="<%= url('/style.css') %>" />
   </head>
   <body>
     <h1>Caesar Cipher</h1>
+    
+    <p class="instructions">
+      Below, you can enter text that you want to encrypt using the Caesar cipher and then the shift that you want to apply. To apply a right shift, enter a positive number. (It can only perform right shift) The number that you enter can be greater than 26 to cycle through the alpahbet more than once.
+    </p>
 
-    <form>
-      <p>
-        Your message:
-      </p>
-      <textarea name="message"></textarea><br/>
-      <p>
-        <input type="number" name="shift_key" value="5">
-      </p>
-      <input type="submit" value="Encrypt message"/>
-    </form>
+    <div class="flex-container">
+      <form class="message_input">
+        <h2>Your message:</h2>
+        <textarea name="message" placeholder="Enter the message you want to encrypt here"></textarea><br/>
+        
+        <div>
+          <input type="number" name="shift_key" value="5">
+          <input type="submit" value="Encrypt message"/>
+        </div>
+      </form>
 
-    <% if !encrypted_message.nil?  %>
-      <h2>Encrypted Message</h2>
-      <p>
-        <%= encrypted_message %>
-      </p>
-    <% end %>
+      <div class="message_output">
+        <h2>Encrypted message</h2>
+        <p class="message">
+            <%= encrypted_message %>
+        </p>
+      </div>
+    </div>
   </body>
 </html>

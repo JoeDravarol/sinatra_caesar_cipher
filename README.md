@@ -2,7 +2,7 @@
 
 Caesar cipher is one of the earliest known and simplest encryption techniques.  It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet. For example, with a shift of 3, A would be replaced by D, B would become E, and so on. For more information click [here](http://practicalcryptography.com/ciphers/caesar-cipher/)
 
-Skills you will learn from doing this project
+This web app accepts a text input and a shift integer, which ouputs the encrypted message after applying the Caesar cipher.
 
 ## Heroku
 To view this app, click [here]()
